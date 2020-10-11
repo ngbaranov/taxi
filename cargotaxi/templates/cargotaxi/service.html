@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+       <div class="card-deck">
+       {% for item in service %}
+        <div class="card">
+            <img src="{{ item.photo.url }}" class="card-img-top" alt="Доставка стройматериалов">
+            <div class="card-body text-center">
+                <a href="" class="title nav-link text-dark  "><h5 class="card-title font-weight-bold">{{ item.title }}</h5></a>
+
+            </div>
+        </div>
+        {% endfor %}
+       </div>
+{% endblock %}
+

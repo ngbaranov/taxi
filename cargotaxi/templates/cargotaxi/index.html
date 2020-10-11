@@ -1,64 +1,15 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'css/stile.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Serif:wght@400;700&display=swap"
-          rel="stylesheet">
-    <title>Грузовое такси</title>
-</head>
-<body>
-<header class="bg-warning">
-    <div class="container">
-        <nav class="navbar navbar-expand-lg pl-5">
-            <a class="title navbar-brand" href="index.html"><p class="text-center text-dark m-0">И.П.Еремин</p>
-                <p class="text-center text-dark m-0">тел 915-614-33-73</p></a>
 
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="btns nav-link mr-3" href="#">УСЛУГИ<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="btns nav-link mr-3" href="price.html">ЦЕНЫ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="btns nav-link mr-3" href="#">ЗАКАЗАТЬ</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-
-</header>
-<main class="container">
-    <img src="{% static 'img/avtos.png'  %}" class="img-fluid">
+{% block content %}
+<img src="{% static 'img/avtos.png'  %}" class="img-fluid">
     <article>
-        <h2 class="text-center mt-5 mb3">Грузоперевозки в Касимове</h2>
+
+    {{ home }}
+    {% for item in home %}
+        <h2 class="text-center mt-5 mb3">{{ home.title }}</h2>
         <img src="img/gazel.png" class="img-fluid float-left mr-5">
-        <p>Основное направление деятельности нашей компании - Грузоперевозки
-            по Москве.
-            Мы оказываем услуги грузоперевозок физическим и юридическим лицам,
-            работаем с НДС. Ресурсы нашей компании позволяют обслуживать более
-            1000 клиентов в день.
-            В нашей компании можно заказать грузоперевозки по Москве и области
-            недорого, перевозку мебели, вещей и бытовой техники. Оказываем комплексные услуги:
-            квартирный переезд,офисный переезд, дачный переезд.
-            Если Вам требуется что-то погрузить, разгрузить, разобрать или собрать мы предоставим Вам
-            услуги профессиональных грузчиков. Да кстати грузчики, работающие в нашей компании,
-            никогда не попросят денег, за этажность, разборку или сборку мебели. Мы работаем по
-            принципу все включено.
-            Привет как дела
-        </p>
+        {{ item.content }}
+    {% endfor %}
     </article>
-</main>
-<footer class="bg-warning mt-5 pt-3 pb-3">
-    <div class="container  title ">
-        <div class="row">
-            <div class="col-6 text-left ">Грузоперевозки по Касимову</div>
-            <div class="col-6 text-right">тел 915-614-33-73</div>
-        </div>
-    </div>
-</footer>
-</body>
-</html>
+{% endblock %}

@@ -37,7 +37,20 @@ class Price(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = 'Цена'
-        verbose_name_plural = 'Цены'
+        verbose_name = 'Заказ машины'
+        verbose_name_plural = 'Заказ машин'
+
+class ApplForms(models.Model):
+    name = models.CharField(max_length=100, verbose_name='Имя')
+    phone = models.CharField(max_length=100, verbose_name='Телефон')
+    space = models.TextField(blank=True, verbose_name='Дополнительная информация')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Форма заказа'
+        verbose_name_plural = 'Форма заказов'
+
 
         

@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/stile.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Serif:wght@400;700&display=swap"
+          rel="stylesheet">
+    <title>{% block title %}Грузоперевозки Касимов{% endblock %}</title>
+</head>
+<body>
+<header class="bg-warning">
+    <div class="container">
+
+        <nav class="navbar navbar-expand-lg pl-5">
+
+            <a class="title navbar-brand" href="{% url 'home' %}"><p class="text-center text-dark m-0">И.П.Еремин</p>
+                <p class="text-center text-dark m-0">тел 915-614-33-73</p></a>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="btns nav-link mr-3" href="{% url 'service' %}">УСЛУГИ<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="btns nav-link mr-3" href="price.html">ЦЕНЫ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btns nav-link mr-3" href="#">ЗАКАЗАТЬ</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+</header>
+<main class="container mt-4">
+    {% block content %}Content
+
+    {% endblock %}
+</main>
+<footer class="bg-warning mt-5 pt-3 pb-3">
+    <div class="container  title ">
+        <div class="row">
+            <div class="col-6 text-left ">Грузоперевозки по Касимову</div>
+            <div class="col-6 text-right">тел 915-614-33-73</div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
