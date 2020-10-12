@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Home(models.Model):
@@ -33,12 +34,18 @@ class Price(models.Model):
     price_taxi = models.CharField(max_length=200, verbose_name='Цена за час')
     photo_taxi = models.ImageField(upload_to='photos/%Y/%m/%d/', verbose_name='Фото ')
 
+    def get_absolute_url(self):
+        return reverse('price', kwargs={'pk': self.pk})
+
+
     def __str__(self):
         return self.title
 
     class Meta:
         verbose_name = 'Заказ машины'
         verbose_name_plural = 'Заказ машин'
+
+
 
 class ApplForms(models.Model):
     name = models.CharField(max_length=100, verbose_name='Имя')

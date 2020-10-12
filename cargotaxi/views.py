@@ -12,6 +12,11 @@ class ViewService(ListView):
     template_name = 'cargotaxi/service.html'
     context_object_name = 'service'
 
+class ViewPrice(DetailView):
+    model = Price
+    template_name = 'cargotaxi/price.html'
+    context_object_name = 'price'
+
 
 
 # Create your views here.
