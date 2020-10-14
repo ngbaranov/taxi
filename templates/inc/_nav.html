@@ -1,0 +1,10 @@
+{% load price_tags %}
+
+<nav class="nav nav-pills nav-justified">
+    {% get_list_price as view_price  %}
+    {% for item in view_price %}
+
+        <a class="nav-item nav-link active bg-warning" href="{% url 'price' item.pk %}">{{ item.title }}</a>
+
+     {% endfor %}
+    </nav>

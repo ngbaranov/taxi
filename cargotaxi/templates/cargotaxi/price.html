@@ -2,44 +2,39 @@
 {% load static %}
 
 {% block content %}
-    <nav class="nav nav-pills nav-justified">
-        <a class="nav-item nav-link active bg-warning" href="#">Ситроен</a>
-        <a class="nav-item nav-link text-dark" href="#">Мерседес</a>
-        <a class="nav-item nav-link text-dark" href="#">Портер</a>
-        <a class="nav-item nav-link text-dark" href="#">Газель-3</a>
-        <a class="nav-item nav-link text-dark" href="#">Газель-5</a>
-    </nav>
+{% include 'inc/_nav.html' %}
+
 
     <div class="container mt-4">
         <div class="row">
             <div class="col-6">
-                <img src="img/gazelprace.png" class="img-fluid">
+                <img src="{{ view_price.photo_taxi.url}}" class="img-fluid">
             </div>
             <div class="col-6">
-                <h2>Ситроен</h2>
+                <h2>{{ view_price.title }}</h2>
                 <table class="table">
 
                     <tr>
                         <th scope="row">Объем кузова</th>
-                        <td>10 кубов</td>
+                        <td>{{ view_price.body_volume }}</td>
                     </tr>
                     <tr>
                         <th scope="row">Грузоподъемность</th>
-                        <td>1,5 тонны</td>
+                        <td>{{ view_price.cargo }}</td>
                     </tr>
                     <tr>
                         <th scope="row">Длина кузова</th>
-                        <td>3 метра</td>
+                        <td>{{ view_price.body_length }}</td>
                     </tr>
 
                     <tr>
                         <th scope="row">Ширина кузова</th>
-                        <td>2 метра</td>
+                        <td>{{ view_price.body_width }}</td>
                     </tr>
 
                     <tr>
                         <th scope="row">Высота кузова</th>
-                        <td>1,5 метра</td>
+                        <td>{{ view_price.title_height }}</td>
                     </tr>
                     </tbody>
 
@@ -49,5 +44,5 @@
         </div>
 
     </div>
-    <button type="button" class="btn_price btn  btn-block ">Заказать 500 р/ч</button>
+    <button type="button" class="btn_price btn  btn-block ">Заказать {{view_price.price_taxi}}</button>
 {% endblock %}
